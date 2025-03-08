@@ -327,7 +327,8 @@ jobs:
             if ($env:ARCH_CODE -eq "x86_64") {
               $downloadUrl = "https://downloads.getfiddler.com/mac/Fiddler%20Everywhere%20$scrapedVersion.dmg"
             } elseif ($env:ARCH_CODE -eq "arm64") {
-              $downloadUrl = "https://downloads.getfiddler.com/mac-arm64/Fiddler%20Everywhere%20$scrapedVersion.dmg"
+              $downloadUrl = "https://downloads.getfiddler.com/mac-arm64/Fiddler%20Everywhere%206.2.0.dmg"
+              # $downloadUrl = "https://downloads.getfiddler.com/mac-arm64/Fiddler%20Everywhere%20$scrapedVersion.dmg"
             } elseif ($env:ARCH_CODE -eq "arm64e") {
               //Don't know
             } else {
