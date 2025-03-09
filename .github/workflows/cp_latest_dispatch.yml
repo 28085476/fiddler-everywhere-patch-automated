@@ -323,6 +323,7 @@ jobs:
           # Check if the scraped version is available
           if (-not [string]::IsNullOrEmpty($scrapedVersion)) {
             $downloadUrl = "null"
+            echo "$env:ARCH_CODE"
 
             if ($env:ARCH_CODE -eq "x86_64") {
               $downloadUrl = "https://downloads.getfiddler.com/mac/Fiddler%20Everywhere%20$scrapedVersion.dmg"
@@ -331,7 +332,8 @@ jobs:
             } elseif ($env:ARCH_CODE -eq "arm64e") {
               $downloadUrl = "https://downloads.getfiddler.com/mac-arm64/Fiddler%20Everywhere%20$scrapedVersion.dmg"
             } else {
-              throw "Unsupported OS architecture: $env:ARCH_CODE"
+              $downloadUrl = "https://downloads.getfiddler.com/mac-arm64/Fiddler%20Everywhere%20$scrapedVersion.dmg"
+              # throw "Unsupported OS architecture: $env:ARCH_CODE"
             }
           
             Write-Host "Download URL: $downloadUrl"
